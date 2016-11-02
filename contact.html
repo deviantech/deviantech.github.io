@@ -54,20 +54,24 @@
               Deviantech consists of an internationally distributed team headquartered in Palo Alto, California.
             </div>
             <div class='columns span12'>
-              <form action='/contact' method='post'>
+              <div id="thanks" class="alert-message success" style="text-align: center; display: none;">
+                Thanks for your submission!
+              </div>
+              <form action="https://formspree.io/apps@deviantech.com" method="post">
                 <input name='spambot' type='hidden' value=''>
+                <input type="hidden" name="_next" value="http://deviantech.com/contact.html?submitted=true" />
                 <fieldset>
                   <legend>Contact Us</legend>
                   <div class='clearfix'>
                     <label for='email'>Your Name</label>
                     <div class='input'>
-                      <input class='xxlarge' name='name' type='text' value=''>
+                      <input class='xxlarge' name='name' type='text'>
                     </div>
                   </div>
                   <div class='clearfix'>
                     <label for='email'>Email Address</label>
                     <div class='input'>
-                      <input class='xxlarge' name='email' type='text' value=''>
+                      <input class='xxlarge' name='email' type='text'>
                     </div>
                   </div>
                   <div class='clearfix'>
@@ -128,7 +132,13 @@
     <div class='clear'></div>
   </div>
   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
-
   <script src='javascripts/application.js' type='text/javascript'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      if (document.location.search.match(/submitted/)) {
+        $('#thanks').show();
+      }
+    });
+  </script>
 </body>
 </html>
