@@ -215,6 +215,11 @@ div.topbar {
     color: #555; }
   #footer .weblinks {
     padding-top: 10px; }
+  #footer .iconlink {
+    margin-right: 10px;
+    position: relative;
+    top: -5px;
+  }
   #footer .iconlink img {
     height: 50px;
     width: 50px; }
